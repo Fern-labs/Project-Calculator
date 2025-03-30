@@ -65,6 +65,9 @@ button {
 .clear {
   background-color: #e4c1f9;
 }
+.backspace {
+  background-color: #e4c1f9;
+}
 
 button:hover {
   transform: translateY(0.25em);

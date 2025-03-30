@@ -9,6 +9,7 @@ let resultDisplayed = false;
 const display = document.querySelector(".display");
 const operatorButtons = document.querySelectorAll(".operator");
 const buttons = document.querySelectorAll(".num");
+const dotButton = document.querySelector(".dot");
 
 function add(num1, num2) {
   return Math.round(num1 + num2);
@@ -56,7 +57,19 @@ function displayScreen() {
         resultDisplayed = false;
       }
 
+      if (element === "←") {
+        num1Holder.pop();
+        console.log(num1Holder);
+        display.textContent = num1Holder.join("");
+        return;
+      }
+
+      if (element === ".") {
+        dotButton.disabled = true;
+      }
+
       num1Holder.push(element);
+
       let num1HolderNoCommas = num1Holder.join("");
       display.textContent = num1HolderNoCommas;
 
@@ -70,6 +83,7 @@ function displayScreen() {
 
   operatorButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
+      dotButton.disabled = false;
       if (num1 === undefined) return;
 
       if (buttonClicked && num2 !== undefined) {
@@ -95,6 +109,7 @@ function clear() {
     num1Holder = [];
     count = 0;
     display.textContent = "";
+    dotButton.disabled = false;
   });
 }
 
@@ -110,6 +125,7 @@ function evaluate() {
       buttonClicked = false;
       num1Holder = [];
       resultDisplayed = true;
+      dotButton.disabled = false;
     }
   });
 }
