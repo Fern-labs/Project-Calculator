@@ -7,24 +7,69 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #ff99c8;
 }
 .calc {
-  outline: solid black;
-  height: 550px;
-  flex-basis: 350px;
+  height: 350px;
+  flex-basis: 250px;
+  border-radius: 5px;
+  background-color: #fcf6bd;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 button {
-  height: 30px;
-  width: 80px;
-  font-size: 20px;
-}
-.display {
-  margin: 20px;
-  outline: black solid;
   height: 40px;
-  width: 150px;
+  flex-basis: 77.5px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.display {
+  background-color: #e4c1f9;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 2px;
+
+  border-radius: 5px;
+  color: black;
+  font-size: 1.3em;
+}
+
+.row0,
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  margin-top: 14px;
+}
+
+.zero {
+  flex: 3;
+}
+
+.operator {
+  background-color: #d0f4de;
+}
+.num {
+  background-color: #a9def9;
+}
+
+.equals,
+.clear {
+  background-color: #e4c1f9;
+}
+
+button:hover {
+  transform: translateY(0.25em);
+  opacity: 0.7;
+}
+button:hover::before {
+  transform: translate3d(0px, 0.5em, -1em);
 }
